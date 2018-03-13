@@ -1,5 +1,22 @@
 <html>
-  <head>
-    <title>WebGL osu client</title>
-  </head>
+	<head>
+		<title>WebGL osu client</title>
+		<script>
+		function main()
+		{
+			const canvas = document.querySelector("#presentation");
+			const gl = canvas.getContext("webgl");
+			if(!gl)
+			{
+				alert("Failed to initialise webGL!");
+				return;
+			}
+			gl.clearColor(0.0,0.0,0.5,1.0);
+			gl.clear(gl.COLOR_BUFFER_BIT);
+		}
+		</script>
+	</head>
+	<body onload="main();">
+		<canvas id="presentation" width="640" height="480"></canvas>
+	</body>
 </html>
